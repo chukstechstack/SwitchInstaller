@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Directory Id="dir824FCFF15B3FD12109A6A03AFA791116" Name="net8.0-windows" />
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents">
+			<Component Id="cmp8B11DE70BDB7669169329A509A73572A" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="4ea36742-247d-4dae-9e55-d970bba912f4">
+				<File Id="filAF97954E646F4563B22317A7C5B1E362" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\Switch.deps.json" />
+			</Component>
+			<Component Id="cmp2D05923259531E52BBD4C583E89C2289" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="15eae99c-9ee9-4ae5-a7ec-e7bc2aad752d">
+				<File Id="filD34765DB4724FA93B0789C84A030004C" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\Switch.dll" />
+			</Component>
+			<Component Id="cmp7F8E1DDAA4C47F7E0FCBCCD3E061FD88" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="42ae52dc-14ef-437c-86a1-d13c42ad169e">
+				<File Id="fil6F8FBA1FF8612C148E474EA0092F4365" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\Switch.exe" />
+			</Component>
+			<Component Id="cmp226FF835EF08E6440CFEA485B6DEE0EC" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="2a8a5e1f-a361-408c-b6b2-ace521cd39a1">
+				<File Id="fil53E8E9C128072A36BDBFE766BB439C2B" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\Switch.pdb" />
+			</Component>
+			<Component Id="cmpA7DE00B8FEFACF25C65F53092D9AA7F1" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="081a9712-bdb4-4729-9a1c-e686a994e9a8">
+				<File Id="fil667760E51ABFD8FA19A7A1FAD24DBC4B" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\Switch.runtimeconfig.json" />
+			</Component>
+			<Component Id="cmp59ABCFB035BC80152491078B2DF09540" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="b6cfd300-86df-4e63-93c7-cfc8642a62df">
+				<File Id="fil4C42460EE461C91183BE0FE8D5DC36FD" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\System.Diagnostics.EventLog.dll" />
+			</Component>
+			<Component Id="cmp2412B7F528CC0B7A54341B0C5226C296" Directory="dir824FCFF15B3FD12109A6A03AFA791116" Guid="7e86c431-6b87-47f5-a823-97d1391e091d">
+				<File Id="filC6FBDCB3C87C055100FE339CEDAE2DFE" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\System.ServiceProcess.ServiceController.dll" />
+			</Component>
+			<Component Id="cmpE8EE4825492CDCF9F754D56E5CCE48AB" Directory="dir373475D06757D7B2849234EF8560E60F" Guid="050503e7-db04-41ff-b765-906abc372d4c">
+				<File Id="fil0F5CD629A084A4870CED504FBC481D56" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll" />
+			</Component>
+			<Component Id="cmpBD628B91BF972C12351D6B282A1A2316" Directory="dir373475D06757D7B2849234EF8560E60F" Guid="afba973a-9366-4edd-8bf7-dc38dfce3d7a">
+				<File Id="fil42B6E9D727A5A3877357FD6C1A9A5F13" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll" />
+			</Component>
+			<Component Id="cmp53DF1A5928266B5BF9262079B046EA1F" Directory="dir373475D06757D7B2849234EF8560E60F" Guid="ee2dac8e-bd56-4073-b3ce-c6184bab1427">
+				<File Id="fil000B8F1BCC9162EF8CF69CEE70050D48" KeyPath="yes" Source="C:\Users\HP\source\repos\Switch\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.ServiceProcess.ServiceController.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="dir470FDA369D8F599874133BE96F58C1D0">
+			<Directory Id="dir16B253DA74B0B95AFA9B28E7F9E2A275" Name="win" />
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="dirE069CCC97C46F628D82393941B732F78">
+			<Directory Id="dir373475D06757D7B2849234EF8560E60F" Name="net8.0" />
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="dir824FCFF15B3FD12109A6A03AFA791116">
+			<Directory Id="dir470FDA369D8F599874133BE96F58C1D0" Name="runtimes" />
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="dir16B253DA74B0B95AFA9B28E7F9E2A275">
+			<Directory Id="dirE069CCC97C46F628D82393941B732F78" Name="lib" />
+		</DirectoryRef>
+	</Fragment>
+</Wix>

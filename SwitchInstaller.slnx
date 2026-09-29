@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="SwitchInstaller.wixproj" Id="0ba3167a-38cd-4f7a-8fa7-3bf7fb84678a">
+    <Build />
+  </Project>
+</Solution>

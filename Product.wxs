@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="SwitchInstaller" Language="1033" Version="1.0.0.0" Manufacturer="C.E Kingsley" UpgradeCode="0e4909a0-725e-407a-9802-ac7a5f41b00f">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<!-- Checkbox on the final dialog -->
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Switch" />
+		<Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]net8.0-windows\Switch.exe" />
+
+		<!-- Custom action to launch the app -->
+		<CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Execute="immediate" Return="check" />
+
+		<!-- Installer UI -->
+		<UI>
+			<UIRef Id="WixUI_Minimal" />
+			<Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">
+				<![CDATA[WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed]]>
+			</Publish>
+		</UI>
+
+		<!-- Features -->
+		<Feature Id="ProductFeature" Title="SwitchInstaller" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="DesktopShortcut" />
+		</Feature>
+	</Product>
+
+	<!-- Directory structure -->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SwitchInstaller">
+					<Directory Id="Net8Folder" Name="net8.0-windows" />
+				</Directory>
+			</Directory>
+			<Directory Id="DesktopFolder" />
+		</Directory>
+	</Fragment>
+
+	<!-- Desktop shortcut -->
+	<Fragment>
+		<DirectoryRef Id="Net8Folder">
+			<Component Id="DesktopShortcut" Guid="*">
+				<Shortcut Id="DesktopShortcut"
+						  Directory="DesktopFolder"
+						  Name="Switch"
+						  Description="Launch Switch"
+						  Target="[Net8Folder]Switch.exe"
+						  WorkingDirectory="Net8Folder" />
+				<RegistryValue Root="HKCU" Key="Software\SwitchInstaller" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes"/>
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
