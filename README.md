@@ -1,77 +1,137 @@
 
-# 🚀 Switch Installer  
+<div align="center">
 
-### ✨ A Windows installer for the Switch desktop application  
-Built with **WiX** for a clean, reliable, and professional installation experience.  
+  <img src="https://img.shields.io/badge/SWITCH-DESKTOP_OS-emerald?style=for-the-badge&logo=windows&logoColor=white" alt="Switch Logo" />
+  
+  # ⚡ SWITCH_
+  
+  <p align="center">
+    <b>The Ultimate Minimalist Focus & Goal Execution Engine for Windows.</b><br>
+    <i>Lock distractions out, channel total flow state, and enforce deep focus.</i>
+  </p>
+
+  <p align="center">
+    <a href="https://switch-landing.onrender.com/" target="_blank">
+      <img src="https://img.shields.io/badge/🚀_Live_Landing_Page-Preview_Web-10B981?style=flat-square&logo=safari" alt="Live Landing Page" />
+    </a>
+    <a href="https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi" target="_blank">
+      <img src="https://img.shields.io/badge/📦_Download_PC_Installer-.MSI_Release-3B82F6?style=flat-square&logo=windows" alt="Download Installer" />
+    </a>
+    <img src="https://img.shields.io/badge/Platform-Windows_10_%2F_11-blue?style=flat-square&logo=windows" alt="Platform" />
+    <img src="https://img.shields.io/badge/.NET-10.0-purple?style=flat-square&logo=dotnet" alt=".NET Version" />
+  </p>
+
+</div>
 
 ---
 
-## 🎬 Overview  
-This project packages the compiled Switch app into a **modern Windows installation flow**.  
-It installs the application into **Program Files**, includes the required **.NET runtime files**, creates a **desktop shortcut**, and lets the user **launch the app immediately** after installation.  
+## 🎬 Cinematic Architecture & Overview
+
+> **Switch** is a high-assurance Windows desktop application engineered to give you absolute control over your digital environment. By combining a modern WPF interface with a persistent background Windows service, Switch keeps enforcement active even when the app window is closed.
+
+<div align="center">
+  <br>
+  <img src="https://github.com/user-attachments/assets/50d1129b-a669-4b99-9e9f-e6d25d4ae742" alt="Switch App Interface" width="90%" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.8);" />
+  <br><br>
+</div>
 
 ---
 
-## 🌟 Features  
-- 🖥️ Clean Windows installer workflow  
-- ⚙️ .NET 8 app deployment  
-- 📂 Program Files installation structure  
-- 🖱️ Desktop shortcut creation  
-- 🔄 Upgrade‑aware installer behavior  
-- 🚀 Optional launch after install  
-- 🎯 Minimal and professional setup UX  
+## ✨ Why Switch?
+
+Switch is built for developers, creators, and high achievers who want a clean, intentional control layer over their OS:
+
+*   🛑 **App & Process Blocking** — Target distracting desktop applications, browser processes, and installer patterns.
+*   📁 **Folder Locking** — Apply strict access-control protections to directories during active focus windows.
+*   🛡️ **Service-Backed Enforcement** — Runs a dedicated Windows service (`Switch.Service.Host`) to keep monitoring active independently of the UI.
+*   🔒 **Uninstall Safety** — Actively guards against tampering and bypass flows while focus blocks are enforced.
+*   🔄 **Auto-Start Integration** — Registers seamlessly into system startup so rules apply the moment your PC boots.
 
 ---
 
-## 📁 Project Files  
-```text
-SwitchInstaller/
-├── README.md
-├── SwitchInstaller.wixproj
-├── Product.wxs
-├── HarvestedFiles.wxs
-├── bin/
-│   └── build output
-├── obj/
-│   └── intermediate build output
-└── ...
+## 🛠️ Technology Stack
+
+*   🖥️ **WPF (Windows Presentation Foundation)** — Modern, responsive desktop user interface.
+*   ⚙️ **C# / .NET 10** — High-performance backend logic and service communication.
+*   📦 **WiX Toolset** — Professional `.msi` installation package generation.
+*   🌐 **React & Tailwind CSS** — Powers the companion cinematic web landing page.
+
+---
+
+## 🚀 Quick Start & Development
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/chukstechstack/Switch.git](https://github.com/chukstechstack/Switch.git)
+cd Switch
+
 ```
 
----
-
-## 🛠️ Build Requirements  
-- 🖥️ Windows 10/11  
-- 🛠️ WiX Toolset v3.11+  
-- ⚙️ .NET SDK 8+  
-- 📐 Visual Studio 2022 or compatible MSBuild environment  
-
----
-
-## ⚡ Build  
-From the project folder:  
+### 2. Restore Dependencies
 
 ```powershell
-msbuild SwitchInstaller.wixproj /p:Configuration=Release
+dotnet restore
+
 ```
 
-Or build directly in Visual Studio using the WiX project file.  
+### 3. Build the Application
+
+```powershell
+dotnet build "Switch.csproj" -c Release
+
+```
+
+### 4. Publish for Production
+
+```powershell
+dotnet publish "Switch.csproj" -c Release -r win-x64 --self-contained false -o "publish\final"
+
+```
+
+Launch the executable directly:
+
+```powershell
+"publish\final\Switch.exe"
+
+```
 
 ---
 
-## 📥 Install Behavior  
-When the installer runs, it will:  
-1. 📂 Install the required application files to the target folder  
-2. 🗂️ Place the app under the `net8.0-windows` directory  
-3. 🖱️ Add a desktop shortcut for quick access  
-4. 🚀 Offer the option to launch Switch immediately after setup completes  
+## ⚙️ Background Service Setup
+
+To enable full background watchdog and system enforcement:
+
+```powershell
+cd publish\final
+.\Switch.Service.Host.exe --install
+
+```
+
+*This command registers the background Windows service and starts protection protocols automatically.*
 
 ---
 
-## 📝 Notes  
-This installer is tuned for a **lightweight but professional end‑user experience**, making deployment seamless and polished.  
+## 🔒 Security Model & Realities
+
+Switch is designed as a powerful productivity enforcement utility for personal and managed Windows environments:
+
+* The app utilizes a real native Windows service as its core system boundary for monitoring and rule persistence.
+* It is optimized for focus and intentional workflow guardrails rather than enterprise kernel-level root-hardening.
 
 ---
 
-## 👤 Author  
-**C.E Kingsley**  
-Built for a seamless desktop deployment experience.  
+## 🗺️ Roadmap
+
+* [x] WPF Desktop UI & Core Block State Engine
+* [x] Background Windows Service Watchdog (`Switch.Service.Host`)
+* [x] Cinematic Web Landing Page & Automated MSI Release Pipeline
+* [ ] Advanced Recurrence Scheduling & Analytics Trackers
+* [ ] Kiosk-Style Enterprise Hardening Extensions
+
+---
+
+## 📄 License & Author
+
+Distributed under internal/personal developer terms.
+
+**Created & Maintained by C.E Kingsley** 🚀
