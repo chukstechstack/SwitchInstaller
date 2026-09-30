@@ -25,7 +25,7 @@
 
 ---
 
-## 🎬 Cinematic Architecture & Overview
+## 🎬  Architecture & Overview
 
 > **Switch** is a high-assurance Windows desktop application engineered to give you absolute control over your digital environment. By combining a modern WPF interface with a persistent background Windows service, Switch keeps enforcement active even when the app window is closed.
 
